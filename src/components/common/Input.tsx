@@ -1,84 +1,88 @@
 import React, { useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import Button, { BtnStyleType } from './Button';
+import { Todo, TodoList, initialTodo } from '../model/todo';
+import shortid from 'shortid';
 
-interface TodoList {
-    todoTitle: string;
-    todoContents: string;
+// interface InputItemProps {
+//     id?: string;
+//     type: string;
+//     title: string;
+//     contents: string;
+//     autoFocus?: boolean;
+//     value: string;
+//     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+// }
+interface FormProps {
+    todos: Todo[];
+    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
-
-interface InputItemProps {
-    id?: string;
-    type: string;
-    title: string;
-    contents: string;
-    autoFocus?: boolean;
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-const Input = () => {
-    const [todoList, setTodoList] = useState<TodoList[]>([]);
+const Input = ({ todos, setTodos }: FormProps) => {
     const [todoTitle, setTodoTitle] = useState<string>('');
     const [todoContents, setTodoContents] = useState<string>('');
-    const todoTitleRef = useRef<HTMLInputElement>(null);
 
     const resetHandler = () => {
         setTodoTitle('');
         setTodoContents('');
-
-        const todoTitleCurrent = todoTitleRef.current;
-        if (!todoTitleCurrent) return;
-        todoTitleCurrent.focus();
     };
 
-    const submitHandler = () => {
-        const newTodo = { todoTitle, todoContents };
-        setTodoList([...todoList, newTodo]);
+    const submitHandler = (e: React.FormEvent<HTMLFormElement>): void => {
+        e.preventDefault();
+        const newTodo = { id: shortid.generate(), todoTitle, todoContents, isDone: false };
+        setTodos([...todos, newTodo]);
         resetHandler();
     };
     return (
-        <StInputWrap>
-            <StLabel htmlFor="TodoTit"> 제목 </StLabel>
-            <StInput
-                id="TodoTit"
-                type="text"
-                value={todoTitle}
-                onChange={(e) => {
-                    setTodoTitle(e.target.value);
-                }}
-            />
-            <StLabel htmlFor="TodoCon"> 내용 </StLabel>
-            <StInput
-                id="TodoCon"
-                type="text"
-                value={todoContents}
-                onChange={(e) => {
-                    setTodoContents(e.target.value);
-                }}
-            />
-            <Button type="submit" btnStyleType={BtnStyleType.BTN_SUBMIT} onClick={submitHandler}>
-                등록하기
-            </Button>
-        </StInputWrap>
+        <StInputForm onSubmit={submitHandler}>
+            <StInputWrap>
+                <StLabel htmlFor="TodoTit"> 제목 </StLabel>
+                <StInput
+                    id="TodoTit"
+                    type="text"
+                    value={todoTitle}
+                    onChange={(e) => {
+                        setTodoTitle(e.target.value);
+                    }}
+                />
+                <StLabel htmlFor="TodoCon"> 내용 </StLabel>
+                <StInput
+                    id="TodoCon"
+                    type="text"
+                    value={todoContents}
+                    onChange={(e) => {
+                        setTodoContents(e.target.value);
+                    }}
+                />
+                <Button type="submit" btnStyleType={BtnStyleType.BTN_SUBMIT}>
+                    등록하기
+                </Button>
+            </StInputWrap>
+        </StInputForm>
     );
 };
 
 export default Input;
 
+const StInputForm = styled.form`
+    background: #efefef;
+    padding: 20px;
+    border-radius: 5px;
+`;
 const StInputWrap = styled.div`
-    margin: 10px;
+    margin: 10px 0;
 `;
 const StLabel = styled.label`
-    display: none;
+    /* display: none; */
+    margin-right: 5px;
 `;
 const StInput = styled.input`
-    padding: 15px 25px;
+    padding: 15px 10px;
+    margin-right: 15px;
     border: none;
     border: solid 1px #ddd;
+    border-radius: 5px;
     &:active,
     &:focus {
-        outline: none;
         border: solid 1px #badf76;
     }
 `;

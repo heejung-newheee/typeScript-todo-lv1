@@ -9,11 +9,11 @@ export enum BtnStyleType {
 }
 
 interface ButtonProps {
-    type?: 'button' | 'submit' | 'reset';
+    type?: 'button' | 'submit';
     children: React.ReactNode;
     btnStyleType: BtnStyleType;
     disabled?: boolean; //
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const Button = ({
@@ -33,9 +33,9 @@ const Button = ({
 
 // 공통 css style
 const btnStyle = css`
-    padding: 15px 25px;
+    padding: 13px 25px;
     border-radius: 5px;
-    margin: 20px;
+    margin: 10px 5px 10px 0;
 `;
 
 // 타입별 style

@@ -6,8 +6,8 @@ const Header = () => {
     return (
         <header>
             <Layout>
-                <span>My Todo List ✅</span>
-                <span>React</span>
+                <h1>My Todo List</h1>
+                <span>TypeScript - React</span>
             </Layout>
         </header>
     );
