@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, useState } from 'react';
+import Header from './components/header/Header';
+import Layout from './components/common/Layout';
+import Footer from './components/footer/Footer';
+import Input from './components/common/Input';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <Layout>
+                <main>
+                    <div>
+                        <form>
+                            <Input />
+                        </form>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h2>Todo</h2>
+                            <div>
+                                <h4>제목</h4>
+                                <p>내용</p>
+                                <button>삭제</button>
+                                <button>상태변경</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Done</h2>
+                            <div>
+                                <h4>제목</h4>
+                                <p>내용</p>
+                                <button>삭제</button>
+                                <button>상태변경</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </Layout>
+            <Footer />
+        </>
+    );
 }
 
 export default App;
