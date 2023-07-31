@@ -1,6 +1,5 @@
 # 프로젝트
 2023-07-27 ~ 2023-07-31
-
 기존 작성한 리액트 입문주차 과제 Lv.1 TodoList를 타입스크립트로 작성 
 
 # 기능
@@ -11,22 +10,15 @@
 
 # 컴포넌트
 Header.tsx
-
 Input.tsx
-
 TodoList.tsx
-
 TodoItem.tsx
-
 Todo.tsx
-
 Footer.tsx
 
 # 공용 컴포넌트
 Button.tsx
-
 Input.tsx
-
 Layout.tsx
 
 # 공용 컴포넌트
