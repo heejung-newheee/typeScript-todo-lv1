@@ -12,18 +12,11 @@ interface ButtonProps {
     type?: 'button' | 'submit';
     children: React.ReactNode;
     btnStyleType: BtnStyleType;
-    disabled?: boolean; //
+    disabled?: boolean;
     onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const Button = ({
-    // type이 undefined면 button으로 할당합니다. 기본값!
-    type = 'button',
-    children,
-    btnStyleType,
-    disabled,
-    onClick
-}: ButtonProps) => {
+const Button = ({ type = 'button', children, btnStyleType, disabled, onClick }: ButtonProps) => {
     return (
         <StButton type={type} $btnStyleType={btnStyleType} disabled={disabled} onClick={onClick}>
             {children}

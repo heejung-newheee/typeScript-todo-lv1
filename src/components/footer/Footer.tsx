@@ -20,6 +20,7 @@ export default Footer;
 
 const StFooter = styled.footer`
     padding: 20px 0;
+    margin-top: 30px;
     background-color: #efefef;
 `;
 const StFootTit = styled.h4``;

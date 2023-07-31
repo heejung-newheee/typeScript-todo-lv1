@@ -1,18 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import Button, { BtnStyleType } from './Button';
-import { Todo, TodoList, initialTodo } from '../model/Todo';
+import { Todo } from '../model/Todo';
 import shortid from 'shortid';
-
-// interface InputItemProps {
-//     id?: string;
-//     type: string;
-//     title: string;
-//     contents: string;
-//     autoFocus?: boolean;
-//     value: string;
-//     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-// }
 interface FormProps {
     todos: Todo[];
     setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
@@ -86,25 +76,3 @@ const StInput = styled.input`
         border: solid 1px #badf76;
     }
 `;
-
-// 재사용 input 태그로 만들어보긩
-// interface InputItemProps {
-//     type: string;
-//     title: string;
-//     id?: string;
-//     name: string;
-//     autoFocus?: boolean;
-//     value: string;
-//     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-// }
-
-// const Input = ({ type, title, name, id = name, autoFocus, value, onChange }: InputItemProps, ref: Ref<HTMLInputElement>) => {
-//     return (
-//         <StInputWrap>
-//             <StLabel htmlFor={id}> {title} </StLabel>
-//             <StInput ref={ref} type={type} id={id} name={name} autoFocus={autoFocus} value={value} onChange={onChange} />
-//         </StInputWrap>
-//     );
-// };
-
-// export default forwardRef(Input);

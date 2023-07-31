@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Header from './components/header/Header';
 import Layout from './components/common/Layout';
 import Footer from './components/footer/Footer';
@@ -15,16 +15,9 @@ function App() {
             <GlobalStyle />
             <Header />
             <Layout>
-                <main>
-                    <div>
-                        <Input todos={todos} setTodos={setTodos} />
-                    </div>
-
-                    <div>
-                        <TodoList todos={todos} setTodos={setTodos} isDone={false} />
-                        <TodoList todos={todos} setTodos={setTodos} isDone={true} />
-                    </div>
-                </main>
+                <Input todos={todos} setTodos={setTodos} />
+                <TodoList todos={todos} setTodos={setTodos} isDone={false} />
+                <TodoList todos={todos} setTodos={setTodos} isDone={true} />
             </Layout>
             <Footer />
         </>
