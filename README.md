@@ -3,10 +3,10 @@
 기존 작성한 리액트 입문주차 과제 Lv.1 TodoList를 타입스크립트로 작성 
 
 # 기능
-Todo 등록
-Todo 조회
-Todo 완료 상태 변경
-Todo 삭제
+- Todo 등록
+- Todo 조회
+- Todo 완료 상태 변경
+- Todo 삭제
 
 # 컴포넌트
 Header.tsx
