@@ -4,7 +4,7 @@ import Layout from './components/common/Layout';
 import Footer from './components/footer/Footer';
 import Input from './components/common/Input';
 import TodoList from './components/todoList/TodoList';
-import { Todo, initialTodo } from './components/model/todo';
+import { Todo, initialTodo } from './components/model/Todo';
 import GlobalStyle from './GlobalStyle';
 
 function App() {

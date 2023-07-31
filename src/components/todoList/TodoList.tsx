@@ -1,5 +1,5 @@
 import React from 'react';
-import { Todo } from '../model/todo';
+import { Todo } from '../model/Todo';
 import TodoItem from '../todoItem/TodoItem';
 import { styled } from 'styled-components';
 interface TodoListProps {

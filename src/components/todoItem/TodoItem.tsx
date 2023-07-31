@@ -1,5 +1,5 @@
 import React from 'react';
-import { Todo } from '../model/todo';
+import { Todo } from '../model/Todo';
 import Button, { BtnStyleType } from '../common/Button';
 import { styled } from 'styled-components';
 interface TodoItemProps {

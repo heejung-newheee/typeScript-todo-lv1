@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import Button, { BtnStyleType } from './Button';
-import { Todo, TodoList, initialTodo } from '../model/todo';
+import { Todo, TodoList, initialTodo } from '../model/Todo';
 import shortid from 'shortid';
 
 // interface InputItemProps {
