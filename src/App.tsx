@@ -9,7 +9,6 @@ import GlobalStyle from './GlobalStyle';
 
 function App() {
     const [todos, setTodos] = useState<Todo[]>(initialTodo);
-    console.log(todos);
     return (
         <>
             <GlobalStyle />
